@@ -18,7 +18,7 @@ const DOMAIN = {
   bank: { label: "53rd App", color: T.blue, bg: T.blueSoft, icon: "🏦" },
   signals: { label: "Signal Layer", color: T.teal, bg: T.tealSoft, icon: "📡" },
   rules: { label: "Rules Engine", color: T.orange, bg: T.orangeSoft, icon: "⚙️" },
-  ai: { label: "Claude API", color: T.purple, bg: T.purpleSoft, icon: "🧠" },
+  ai: { label: "LLM", color: T.purple, bg: T.purpleSoft, icon: "🧠" },
   aem: { label: "Component Lib", color: T.blueAccent, bg: T.blueSoft, icon: "🧩" },
   audit: { label: "Audit Log", color: T.amber, bg: T.amberSoft, icon: "📋" },
 };
@@ -502,7 +502,7 @@ function S8({ onNext, add }) {
   const [typed, setTyped] = useState("");
   const target = "Open a high-yield savings goal — your future down payment thanks you.";
   useEffect(() => {
-    add({ type: "AI_CALL", detail: "Claude API · NBA generation request for Marcus", color: T.purple, domain: "ai", time: "Live" });
+    add({ type: "AI_CALL", detail: "LLM · NBA generation request for Marcus", color: T.purple, domain: "ai", time: "Live" });
     const t1 = setTimeout(() => setPhase(1), 800);
     const t2 = setTimeout(() => setPhase(2), 2200);
     const t3 = setTimeout(() => { setPhase(3); add({ type: "AI_RESPONSE", detail: "Generated · 12 words · within voice + compliance", color: T.purple, domain: "ai", time: "+1.2s" }); }, 3400);
@@ -514,7 +514,7 @@ function S8({ onNext, add }) {
     const iv = setInterval(() => { i++; setTyped(target.slice(0, i)); if (i >= target.length) clearInterval(iv); }, 22);
     return () => clearInterval(iv);
   }, [phase]);
-  return (<div><StepBanner step="AI Module" desc="The Next Best Action card calls Claude with persona signals + brand voice prompt. Copy generated at render time, governed by guardrails." color={T.purple} />
+  return (<div><StepBanner step="AI Module" desc="The Next Best Action card calls the LLM with persona signals + brand voice prompt. Copy generated at render time, governed by guardrails." color={T.purple} />
     <div style={{ display: "grid", gridTemplateColumns: "360px 1fr", gap: 18, alignItems: "start" }}>
       <Dashboard persona="marcus" highlightAI />
       <div>
@@ -531,7 +531,7 @@ function S8({ onNext, add }) {
         </Glass>
         {/* Step 2: Prompt */}
         <Glass style={{ padding: 14, marginBottom: 10, opacity: phase >= 1 ? 1 : .3, transition: "opacity .4s" }} highlight={phase === 1} borderColor={T.purple + "40"}>
-          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}><span style={{ background: T.purple, color: "#fff", borderRadius: 5, padding: "2px 8px", fontSize: 13.5, fontFamily: "JBM", fontWeight: 700 }}>2</span><span style={{ fontSize: 14, fontFamily: "JBM", color: T.purple, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5 }}>Prompt to Claude</span></div>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}><span style={{ background: T.purple, color: "#fff", borderRadius: 5, padding: "2px 8px", fontSize: 13.5, fontFamily: "JBM", fontWeight: 700 }}>2</span><span style={{ fontSize: 14, fontFamily: "JBM", color: T.purple, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5 }}>Prompt to LLM</span></div>
           <div style={{ background: T.ink, color: "#e2e8f0", padding: 10, borderRadius: 8, fontFamily: "JBM", fontSize: 13.5, lineHeight: 1.6 }}>
             <span style={{ color: "#94a3b8" }}>// system</span><br />
             You are a Fifth Third brand voice writer.<br />
@@ -668,7 +668,7 @@ function S10({ onNext, add }) {
                 ["Segment", "ns_consumer_credit_builder"],
                 ["Signals", "searched_credit_card, mobile_only, biweekly_dd"],
                 ["Prompt hash", "sha256:9f3a…b21c"],
-                ["Model", "claude-opus-4-7"],
+                ["Model", "enterprise-llm-v1"],
               ].map(([k, v]) => (<div key={k} style={{ fontSize: 12.5, fontFamily: "JBM" }}>
                 <div style={{ color: T.mid, marginBottom: 1 }}>{k}</div>
                 <div style={{ color: T.ink, fontWeight: 600 }}>{v}</div>
@@ -778,6 +778,41 @@ function S11({ onNext, add }) {
       </div>
     </Glass>
 
+    {/* WEALTHAI ACCELERATOR — the bridge from "what" to "how we deliver it" */}
+    <Glass style={{ padding: 0, marginBottom: 18, overflow: "hidden", borderColor: T.purple + "30" }} highlight>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", alignItems: "stretch" }}>
+        {/* Left: WealthAI brand panel */}
+        <div style={{ padding: "24px 26px", background: `linear-gradient(135deg, ${T.purple}, #3d1268)`, color: "#fff", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div style={{ fontSize: 12, fontFamily: "JBM", color: "rgba(255,255,255,.75)", fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", marginBottom: 8 }}>How we deliver it</div>
+          <div style={{ fontSize: 28, fontWeight: 700, fontFamily: "JBM", letterSpacing: 0.5, marginBottom: 8 }}>WealthAI</div>
+          <div style={{ fontSize: 14, color: "rgba(255,255,255,.9)", lineHeight: 1.55, marginBottom: 14 }}>Coforge's accelerator for real-time personalization in banking and wealth — pre-built schemas, connectors, and AI propensity models on AEP.</div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            {["Pre-built core banking + CRM connectors", "Pre-modeled wealth schemas & micro-segments", "AI propensity + churn models, day one", "Reusable journey playbooks"].map(t => (<div key={t} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "rgba(255,255,255,.92)" }}>
+              <span style={{ color: "#fff", fontWeight: 700 }}>✓</span>
+              <span>{t}</span>
+            </div>))}
+          </div>
+        </div>
+
+        {/* Right: WealthAI's outcome benchmarks */}
+        <div style={{ padding: "24px 28px", background: "#fff", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div style={{ fontSize: 12.5, fontFamily: "JBM", color: T.mid, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 14 }}>WealthAI accelerator outcomes</div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 14 }}>
+            {[
+              { v: "+2–3%", l: "AUM growth", c: T.green },
+              { v: "+15–20%", l: "Digital conversion lift", c: T.blue },
+              { v: "−25%", l: "Cost to serve", c: T.purple },
+              { v: "8–10 wks", l: "First use case live", c: T.amber },
+            ].map(m => (<div key={m.l} style={{ background: T.snow, border: `1px solid ${m.c}25`, borderLeft: `3px solid ${m.c}`, borderRadius: 8, padding: "10px 14px" }}>
+              <div style={{ fontSize: 22, fontWeight: 700, color: m.c, fontFamily: "Outfit", lineHeight: 1.1, letterSpacing: -0.5 }}>{m.v}</div>
+              <div style={{ fontSize: 12.5, color: T.mid, marginTop: 3, fontWeight: 600 }}>{m.l}</div>
+            </div>))}
+          </div>
+          <div style={{ fontSize: 13, color: T.slate, lineHeight: 1.55, padding: "10px 14px", background: T.purpleSoft, borderRadius: 8, borderLeft: `3px solid ${T.purple}` }}>The 53rd personalization story you just walked through is a <strong style={{ color: T.purple }}>direct instantiation</strong> of what WealthAI delivers. The components are already built — we're configuring, not constructing.</div>
+        </div>
+      </div>
+    </Glass>
+
     {/* THREE SUPPORTING PILLARS — different shape than the hero, no big-numeral repetition */}
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 18 }}>
 
@@ -861,7 +896,7 @@ function S12({ add }) {
         { ev: "Marcus's dashboard — credit-builder, mobile-native tone", d: "rules" },
         { ev: "Sarah's dashboard — pragmatic business-peer tone", d: "rules" },
         { ev: "David's dashboard — considered advisory tone", d: "rules" },
-        { ev: "Claude API generates NBA copy at render time", d: "ai" },
+        { ev: "LLM generates NBA copy at render time", d: "ai" },
         { ev: "Brand control — marketers iterate, guardrails hold", d: "ai" },
         { ev: "Compliance control — every string logged and scored", d: "audit" },
         { ev: "Business case — $25–45M upside, defensible math", d: "rules" },
@@ -873,7 +908,7 @@ function S12({ add }) {
     </Glass>
     <div style={{ background: `linear-gradient(135deg, ${T.blue}, ${T.blueDark})`, borderRadius: 16, padding: "26px 30px", textAlign: "center" }}>
       <div style={{ fontSize: 13.5, fontFamily: "JBM", color: "rgba(255,255,255,.82)", letterSpacing: 2, fontWeight: 700, textTransform: "uppercase", marginBottom: 10 }}>Where we go from here</div>
-      <div style={{ fontSize: 23, fontWeight: 700, color: "#fff", fontFamily: "Outfit", lineHeight: 1.35, marginBottom: 14, maxWidth: 700, margin: "0 auto 14px" }}>This isn't a slide deck. The components, the signal layer, and the AI module are real and shippable.</div>
+      <div style={{ fontSize: 23, fontWeight: 700, color: "#fff", fontFamily: "Outfit", lineHeight: 1.35, marginBottom: 14, maxWidth: 720, margin: "0 auto 14px" }}>This isn't a slide deck. WealthAI's components, signal layer, and AI propensity models are already built — we're configuring, not constructing.</div>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, maxWidth: 780, margin: "0 auto" }}>
         {[
           ["Pilot scope", "1 surface · 1 segment", "Marcus / credit-builders, NBA module only"],
@@ -921,7 +956,7 @@ button:hover{opacity:.88;transform:translateY(-1px)}button:active{transform:tran
       <svg width="100%" height="100%" style={{ position: "absolute", opacity: .03 }}><defs><pattern id="g" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke={T.ink} strokeWidth=".5" /></pattern></defs><rect width="100%" height="100%" fill="url(#g)" /></svg>
     </div>
     <div style={{ position: "relative", zIndex: 1, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 18px", borderBottom: `1px solid ${T.mist}`, background: "rgba(255,255,255,.9)", backdropFilter: "blur(16px)" }}>
-      <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "Outfit" }}><span style={{ color: T.blue }}>5/3</span> <span style={{ color: T.ink }}>FIFTH THIRD</span> <span style={{ color: T.pale, fontSize: 15, fontWeight: 400 }}>× Personalization Journey</span></div>
+      <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "Outfit" }}><span style={{ color: T.blue }}>5/3</span> <span style={{ color: T.ink }}>FIFTH THIRD</span> <span style={{ color: T.pale, fontSize: 15, fontWeight: 400 }}>× Personalization, powered by</span> <span style={{ color: T.purple, fontSize: 15, fontWeight: 700, fontFamily: "JBM", letterSpacing: 0.5 }}>WealthAI</span></div>
       <div style={{ display: "flex", gap: 5 }}>
         {step > 0 && <button onClick={() => setStep(p => p - 1)} style={{ background: "transparent", color: T.mid, border: `1px solid ${T.mist}`, padding: "4px 12px", borderRadius: 7, cursor: "pointer", fontSize: 15, fontFamily: "Outfit" }}>←</button>}
         <button onClick={() => { setStep(0); setEvents([]); }} style={{ background: "transparent", color: T.blue, border: `1px solid ${T.blue}30`, padding: "4px 12px", borderRadius: 7, cursor: "pointer", fontSize: 15, fontFamily: "Outfit" }}>↺ Reset</button>
