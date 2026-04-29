@@ -906,21 +906,6 @@ function S12({ add }) {
         <span style={{ fontSize: 12.5, fontFamily: "JBM", fontWeight: 600, color: DOMAIN[j.d].color, background: DOMAIN[j.d].bg, padding: "1px 5px", borderRadius: 5 }}>{DOMAIN[j.d].icon} {DOMAIN[j.d].label}</span>
       </div>))}
     </Glass>
-    <div style={{ background: `linear-gradient(135deg, ${T.blue}, ${T.blueDark})`, borderRadius: 16, padding: "26px 30px", textAlign: "center" }}>
-      <div style={{ fontSize: 13.5, fontFamily: "JBM", color: "rgba(255,255,255,.82)", letterSpacing: 2, fontWeight: 700, textTransform: "uppercase", marginBottom: 10 }}>Where we go from here</div>
-      <div style={{ fontSize: 23, fontWeight: 700, color: "#fff", fontFamily: "Outfit", lineHeight: 1.35, marginBottom: 14, maxWidth: 720, margin: "0 auto 14px" }}>This isn't a slide deck. WealthAI's components, signal layer, and AI propensity models are already built — we're configuring, not constructing.</div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, maxWidth: 780, margin: "0 auto" }}>
-        {[
-          ["Pilot scope", "1 surface · 1 segment", "Marcus / credit-builders, NBA module only"],
-          ["Pilot timeline", "8–10 weeks", "Faster than full rollout — narrower scope"],
-          ["Success metric", "+15% NBA action rate", "Read out in 30 days, expand from there"],
-        ].map(([k, v, sub]) => (<div key={k} style={{ background: "rgba(255,255,255,.08)", borderRadius: 10, padding: "14px 16px", border: "1px solid rgba(255,255,255,.12)" }}>
-          <div style={{ fontSize: 12, fontFamily: "JBM", color: "rgba(255,255,255,.75)", fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 6 }}>{k}</div>
-          <div style={{ fontSize: 16, fontWeight: 700, color: "#fff", fontFamily: "Outfit", marginBottom: 4 }}>{v}</div>
-          <div style={{ fontSize: 12.5, color: "rgba(255,255,255,.78)", lineHeight: 1.4 }}>{sub}</div>
-        </div>))}
-      </div>
-    </div>
   </div>);
 }
 
