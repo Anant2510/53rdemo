@@ -778,13 +778,13 @@ function S11({ onNext, add }) {
       </div>
     </Glass>
 
-    {/* WEALTHAI ACCELERATOR — the bridge from "what" to "how we deliver it" */}
+    {/* FINNEXUS ACCELERATOR — the bridge from "what" to "how we deliver it" */}
     <Glass style={{ padding: 0, marginBottom: 18, overflow: "hidden", borderColor: T.purple + "30" }} highlight>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", alignItems: "stretch" }}>
-        {/* Left: WealthAI brand panel */}
+        {/* Left: FinNexus brand panel */}
         <div style={{ padding: "24px 26px", background: `linear-gradient(135deg, ${T.purple}, #3d1268)`, color: "#fff", display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <div style={{ fontSize: 12, fontFamily: "JBM", color: "rgba(255,255,255,.75)", fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", marginBottom: 8 }}>How we deliver it</div>
-          <div style={{ fontSize: 28, fontWeight: 700, fontFamily: "JBM", letterSpacing: 0.5, marginBottom: 8 }}>WealthAI</div>
+          <div style={{ fontSize: 28, fontWeight: 700, fontFamily: "JBM", letterSpacing: 0.5, marginBottom: 8 }}>FinNexus</div>
           <div style={{ fontSize: 14, color: "rgba(255,255,255,.9)", lineHeight: 1.55, marginBottom: 14 }}>Coforge's accelerator for real-time personalization in banking and wealth — pre-built schemas, connectors, and AI propensity models on AEP.</div>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {["Pre-built core banking + CRM connectors", "Pre-modeled wealth schemas & micro-segments", "AI propensity + churn models, day one", "Reusable journey playbooks"].map(t => (<div key={t} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "rgba(255,255,255,.92)" }}>
@@ -794,9 +794,9 @@ function S11({ onNext, add }) {
           </div>
         </div>
 
-        {/* Right: WealthAI's outcome benchmarks */}
+        {/* Right: FinNexus's outcome benchmarks */}
         <div style={{ padding: "24px 28px", background: "#fff", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div style={{ fontSize: 12.5, fontFamily: "JBM", color: T.mid, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 14 }}>WealthAI accelerator outcomes</div>
+          <div style={{ fontSize: 12.5, fontFamily: "JBM", color: T.mid, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 14 }}>FinNexus accelerator outcomes</div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 14 }}>
             {[
               { v: "+2–3%", l: "AUM growth", c: T.green },
@@ -808,7 +808,7 @@ function S11({ onNext, add }) {
               <div style={{ fontSize: 12.5, color: T.mid, marginTop: 3, fontWeight: 600 }}>{m.l}</div>
             </div>))}
           </div>
-          <div style={{ fontSize: 13, color: T.slate, lineHeight: 1.55, padding: "10px 14px", background: T.purpleSoft, borderRadius: 8, borderLeft: `3px solid ${T.purple}` }}>The 53rd personalization story you just walked through is a <strong style={{ color: T.purple }}>direct instantiation</strong> of what WealthAI delivers. The components are already built — we're configuring, not constructing.</div>
+          <div style={{ fontSize: 13, color: T.slate, lineHeight: 1.55, padding: "10px 14px", background: T.purpleSoft, borderRadius: 8, borderLeft: `3px solid ${T.purple}` }}>The 53rd personalization story you just walked through is a <strong style={{ color: T.purple }}>direct instantiation</strong> of what FinNexus delivers. The components are already built — we're configuring, not constructing.</div>
         </div>
       </div>
     </Glass>
@@ -941,7 +941,7 @@ button:hover{opacity:.88;transform:translateY(-1px)}button:active{transform:tran
       <svg width="100%" height="100%" style={{ position: "absolute", opacity: .03 }}><defs><pattern id="g" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke={T.ink} strokeWidth=".5" /></pattern></defs><rect width="100%" height="100%" fill="url(#g)" /></svg>
     </div>
     <div style={{ position: "relative", zIndex: 1, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 18px", borderBottom: `1px solid ${T.mist}`, background: "rgba(255,255,255,.9)", backdropFilter: "blur(16px)" }}>
-      <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "Outfit" }}><span style={{ color: T.blue }}>5/3</span> <span style={{ color: T.ink }}>FIFTH THIRD</span> <span style={{ color: T.pale, fontSize: 15, fontWeight: 400 }}>× Personalization, powered by</span> <span style={{ color: T.purple, fontSize: 15, fontWeight: 700, fontFamily: "JBM", letterSpacing: 0.5 }}>WealthAI</span></div>
+      <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "Outfit" }}><span style={{ color: T.blue }}>5/3</span> <span style={{ color: T.ink }}>FIFTH THIRD</span> <span style={{ color: T.pale, fontSize: 15, fontWeight: 400 }}>× Personalization, powered by</span> <span style={{ color: T.purple, fontSize: 15, fontWeight: 700, fontFamily: "JBM", letterSpacing: 0.5 }}>FinNexus</span></div>
       <div style={{ display: "flex", gap: 5 }}>
         {step > 0 && <button onClick={() => setStep(p => p - 1)} style={{ background: "transparent", color: T.mid, border: `1px solid ${T.mist}`, padding: "4px 12px", borderRadius: 7, cursor: "pointer", fontSize: 15, fontFamily: "Outfit" }}>←</button>}
         <button onClick={() => { setStep(0); setEvents([]); }} style={{ background: "transparent", color: T.blue, border: `1px solid ${T.blue}30`, padding: "4px 12px", borderRadius: 7, cursor: "pointer", fontSize: 15, fontFamily: "Outfit" }}>↺ Reset</button>
